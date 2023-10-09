@@ -23,9 +23,13 @@ We know that if we add an int and a string the JS will convert by default the in
 # 3rd Question's Answer:
 
 Here the correct ans is option A. Because by assigning value in info.favoriteFood we are not changing the value of food[0]. In declaration of
+
                 const info = { favoriteFood: food[0]}
-we are just assigning a copy of food from the food array. And by by assigning 
+
+we are just assigning a copy of food from the food array. And by by assigning 4
+
                 info.favoriteFood = "🍝"
+                
 we are just changing that copy not the food in food array.
 
 # 4th Question's Answer:
