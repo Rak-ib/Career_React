@@ -8,18 +8,27 @@ import {
 } from "react-router-dom";
 import Root from './Component/Root/Root';
 import Home from './Component/Home/Home';
+import AppliedJobs from './Component/AppliedJobs/AppliedJobs';
+import ErrorPage from './Component/ErrorPage/ErrorPage';
+import JobDetails from './Component/JobDetails/JobDetails';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
-        path:"/*",
-        element: <div>Not Found</div>
+        path:"/Applied",
+        element:<AppliedJobs></AppliedJobs>
       },
       {
         path:"/",
         element:<Home></Home>
+      },
+      {
+        path:"/job/:user",
+        element:<JobDetails></JobDetails>,
+        loader:()=>fetch('../jobs.json')
       }
     ]
   },
